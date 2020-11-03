@@ -18,12 +18,17 @@ if (!defined('WPINC')){
 }
 // Plugin Base Path: 
 define( 'BLANK_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'BLANK_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 // Enqueue Plugin CSS
 include (plugin_dir_path(__FILE__) . 'includes/blank-plugin-styles.php');
-// // Enqueue Plugin JavaScript
+// Enqueue Plugin JavaScript
 include (plugin_dir_path(__FILE__) . 'includes/blank-plugin-js.php');
-// // Create the menu and page sections
+// Create the menu and page sections
 include (plugin_dir_path(__FILE__) . 'includes/blank-plugin-menu.php');
+// Add database options
+include (plugin_dir_path(__FILE__) . 'includes/blank-plugin-options.php');
+// Settings Field
+include (plugin_dir_path(__FILE__) . 'includes/blank-plugin-settings-fields.php');
 
 // Adds a link to your settings page once the plugin is activated. 
 function blankPlugin_add_settings_link( $links ) {

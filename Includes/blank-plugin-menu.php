@@ -8,9 +8,22 @@ function render_blank_plugin_settings_markup(){
     }
     else {
         ?>
+        <?php $options = get_option('blankPlugin_option_2')?>
         <div class="wrap">
             <h1><?php esc_html_e(get_admin_page_title())?></h1>
             <p><?php  esc_html_e("Blank plugin setup")?></p>
+            <p><strong><?php esc_html_e(get_option('blankPlugin_option', 'No value exists'))?></strong></p>
+            <div>
+                <?php if(array_key_exists('name', $options)) :?>
+                    <h2>Name of Plugin: <?php esc_html_e($options['name'])?></h2>
+                <?php endif?>
+            </div>
+            <ul>
+                <?php foreach($options as $o) : ?>
+                    <li><?php echo $o;?></li>
+                <?php endforeach; ?>   
+            </ul>
+            <?php include(BLANK_PLUGIN_DIR  . 'templates/admin/options-form.php');?>
         </div>
         <?php 
     }
@@ -25,7 +38,7 @@ function render_feature_1_markup(){
         ?>
         <div>
             <h1>Feature 1 Markup</h1>
-            <p><?php  esc_html_e("Blank plugin setup")?></p>
+            <p><?php esc_html_e("Blank plugin setup")?></p>
         </div>
         <?php 
     }
