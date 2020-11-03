@@ -23,7 +23,7 @@ add_action( 'admin_enqueue_scripts', 'wpplugin_admin_scripts' );
 
 
 // Conditionally load JS on single post pages
-function wpplugin_frontend_scripts() {
+function blankPlugin_frontend_scripts() {
 
   wp_register_script(
     'blankPlugin-frontend',
