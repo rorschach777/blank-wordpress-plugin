@@ -20,10 +20,12 @@ if (!defined('WPINC')){
 define( 'BLANK_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 // Enqueue Plugin CSS
 include (plugin_dir_path(__FILE__) . 'includes/blank-plugin-styles.php');
-// // Enqueue Plugin JavaScript
+// Enqueue Plugin JavaScript
 include (plugin_dir_path(__FILE__) . 'includes/blank-plugin-js.php');
-// // Create the menu and page sections
+// Create the menu and page sections
 include (plugin_dir_path(__FILE__) . 'includes/blank-plugin-menu.php');
+// Add database options
+include (plugin_dir_path(__FILE__) . 'includes/blank-plugin-options.php');
 
 // Adds a link to your settings page once the plugin is activated. 
 function blankPlugin_add_settings_link( $links ) {
